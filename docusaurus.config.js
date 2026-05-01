@@ -51,7 +51,7 @@ const config = {
         docs: {
           sidebarPath: './sidebars.js',
           // 已删除 editUrl，移除“编辑此页”按钮
-          showLastUpdateTime: true,
+          showLastUpdateTime: false,
         },
 
         // ---------- 博客配置 ----------
@@ -103,6 +103,11 @@ const config = {
           label: '文档与帮助',
         },
         {
+          href: 'https://zdzx.zhongzheng.tech/',
+          label: 'ZDZX',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/zZHOENG/docs',
           label: 'GitHub',
           position: 'right',
@@ -133,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © 2026-${new Date().getFullYear()} 中政集团 · 河北正定中学办事处  Built with Docusaurus.`,
+        copyright: `Copyright © 2025-${new Date().getFullYear()} 中政集团\nCopyright © 2026-${new Date().getFullYear()} 中政集团 · 河北正定中学办事处\nDevelop with DeepSeek R1. Built with Docusaurus.`,
       },
 
       // ---------- Algolia 搜索 ----------
@@ -141,7 +146,7 @@ const config = {
         appId: '02PW3ELEZ1',
         apiKey: 'c0b8800316a42fe632fc1de1f2ad97ef',
         indexName: 'zhoeng',
-        contextualSearch: true,
+        contextualSearch: false,
         placeholder: '搜索文档...',
       },
 
