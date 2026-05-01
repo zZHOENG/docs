@@ -80,24 +80,21 @@
   box-shadow: none;
 }
 
-/* ======================== 调整按钮顺序 ======================== */
-/* 导航栏是 flex 容器，颜色切换按钮默认在最右侧，通过 order 将其放到搜索框前面 */
+/* ======================== 调整颜色切换按钮与搜索框的顺序 ======================== */
+/* 将导航栏右侧容器设为 flex 并允许排序 */
 .navbar__items--right {
   display: flex;
   align-items: center;
 }
 
-/* 颜色切换按钮（我们自定义的组件有 .navbar__item 类）增加 order */
+/* 我们覆盖的颜色切换按钮（类名 colorModeToggle）排在第一位 */
 .navbar__items--right .colorModeToggle {
   order: 1;
 }
 
-/* 搜索框增加 order，使其排在颜色按钮后面 */
+/* 搜索框排在第二位 */
 .navbar__items--right .DocSearch-Button {
   order: 2;
 }
 
-/* 确保其他元素不受影响 */
-.navbar__items--right > *:not(.colorModeToggle):not(.DocSearch-Button) {
-  order: 0;
-}
+/* 其余右侧元素（如 GitHub 链接）保持默认 order:0，会排在最前面 */
