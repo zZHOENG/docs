@@ -27,7 +27,13 @@ const config = {
 
   // ======================== 链接检查策略 ========================
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+
+  // ======================== Markdown 配置 ========================
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',  // 从顶层移到这里
+    },
+  },
 
   // ======================== 国际化（中文站点） ========================
   i18n: {
