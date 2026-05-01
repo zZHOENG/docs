@@ -138,7 +138,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © 2025-${new Date().getFullYear()} 中政集团\nCopyright © 2026-${new Date().getFullYear()} 中政集团 · 河北正定中学办事处\nDevelop with DeepSeek R1. Built with Docusaurus.`,
+        copyright: `Copyright © 2025-${new Date().getFullYear()} 中政集团 · 中政科技 Copyright © 2026-${new Date().getFullYear()} 中政集团 · 河北正定中学办事处\nDevelop with DeepSeek R1. Built with Docusaurus.`,
       },
 
       // ---------- Algolia 搜索 ----------
