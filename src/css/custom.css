@@ -80,25 +80,6 @@
   box-shadow: none;
 }
 
-/* ======================== 调整颜色切换按钮与搜索框的顺序 ======================== */
-/* 将导航栏右侧容器设为 flex 并允许排序 */
-.navbar__items--right {
-  display: flex;
-  align-items: center;
-}
-
-/* 我们覆盖的颜色切换按钮（类名 colorModeToggle）排在第一位 */
-.navbar__items--right .colorModeToggle {
-  order: 1;
-}
-
-/* 搜索框排在第二位 */
-.navbar__items--right .DocSearch-Button {
-  order: 2;
-}
-
-/* 其余右侧元素（如 GitHub 链接）保持默认 order:0，会排在最前面 */
-
 /* 首页卡片容器 */
 .cards {
   display: flex;
