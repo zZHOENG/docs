@@ -89,30 +89,37 @@ const config = {
 
       // ---------- 导航栏 ----------
       navbar: {
-        title: '文档 · 帮助',
-        logo: {
-          alt: '文档 · 帮助',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '文档与帮助',
-          },
-          {
-            href: 'https://github.com/zZHOENG/docs',
-            label: 'GitHub',
-            position: 'right',
-          },
-          // 搜索框（将通过 CSS 调整顺序，位于颜色切换按钮之后）
-          {
-            type: 'search',
-            position: 'right',
-          },
-        ],
+      title: '文档 · 帮助',
+      logo: {
+        alt: '文档 · 帮助',
+        src: 'img/logo.svg',
       },
+      hideColorModeToggle: true,   // 禁用默认的自动切换按钮
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: '文档与帮助',
+        },
+        {
+          href: 'https://github.com/zZHOENG/docs',
+          label: 'GitHub',
+          position: 'right',
+        },
+        // 自定义颜色切换按钮（位于搜索框之前）
+        {
+          type: 'custom',
+          position: 'right',
+          component: require('./src/theme/ColorModeToggle').default,
+        },
+        // 搜索框
+        {
+          type: 'search',
+          position: 'right',
+        },
+      ],
+    },
 
       // ---------- 页脚 ----------
       footer: {
