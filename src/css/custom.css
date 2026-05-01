@@ -28,3 +28,76 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* ======================== 全局主色调 ======================== */
+:root {
+  --ifm-color-primary: #3498db;
+  --ifm-color-primary-dark: #2e86c1;
+  --ifm-color-primary-darker: #2874a6;
+  --ifm-color-primary-darkest: #21618c;
+  --ifm-color-primary-light: #5dade2;
+  --ifm-color-primary-lighter: #85c1e9;
+  --ifm-color-primary-lightest: #aed6f1;
+  --ifm-color-primary-contrast-background: #ebf5fb;
+  --ifm-color-primary-contrast-foreground: #1a5276;
+  /* 可继续覆盖其他绿色衍生变量，如 --ifm-link-color 等 */
+  --ifm-link-color: var(--ifm-color-primary-dark);
+}
+
+/* 暗色模式下的主色调 */
+[data-theme='dark'] {
+  --ifm-color-primary: #3498db;
+  --ifm-color-primary-dark: #5dade2;
+  --ifm-color-primary-darker: #85c1e9;
+  --ifm-color-primary-darkest: #aed6f1;
+  --ifm-color-primary-light: #2e86c1;
+  --ifm-color-primary-lighter: #2874a6;
+  --ifm-color-primary-lightest: #21618c;
+}
+
+/* ======================== 搜索框样式 ======================== */
+/* 默认宽度、圆角、浅黑背景 */
+.DocSearch-Button {
+  width: 220px;                    /* 稍长 */
+  border-radius: 20px !important; /* 圆角 */
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme='dark'] .DocSearch-Button {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.DocSearch-Button .DocSearch-Button-Placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme='dark'] .DocSearch-Button .DocSearch-Button-Placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.DocSearch-Button:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none;
+}
+
+/* ======================== 调整按钮顺序 ======================== */
+/* 导航栏是 flex 容器，颜色切换按钮默认在最右侧，通过 order 将其放到搜索框前面 */
+.navbar__items--right {
+  display: flex;
+  align-items: center;
+}
+
+/* 颜色切换按钮（我们自定义的组件有 .navbar__item 类）增加 order */
+.navbar__items--right .colorModeToggle {
+  order: 1;
+}
+
+/* 搜索框增加 order，使其排在颜色按钮后面 */
+.navbar__items--right .DocSearch-Button {
+  order: 2;
+}
+
+/* 确保其他元素不受影响 */
+.navbar__items--right > *:not(.colorModeToggle):not(.DocSearch-Button) {
+  order: 0;
+}
