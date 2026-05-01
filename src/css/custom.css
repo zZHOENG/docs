@@ -98,3 +98,39 @@
 }
 
 /* 其余右侧元素（如 GitHub 链接）保持默认 order:0，会排在最前面 */
+
+/* 首页卡片容器 */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+/* 单个卡片 */
+.card {
+  flex: 1 1 250px;
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  text-decoration: none !important;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--ifm-color-primary);
+}
+
+.card p {
+  margin-bottom: 0;
+  opacity: 0.8;
+}
