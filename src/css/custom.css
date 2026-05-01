@@ -134,3 +134,8 @@
   margin-bottom: 0;
   opacity: 0.8;
 }
+
+/* 让页脚版权区域的文本保留换行符 */
+.footer__copyright {
+  white-space: pre-wrap;
+}
