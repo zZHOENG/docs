@@ -1,0 +1,33 @@
+name: Initialize Docusaurus
+
+on: workflow_dispatch
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      # 重点修改1：将 checkout 升级为 v5
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+
+      # 重点修改2：将 setup-node 升级为 v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Create Docusaurus project
+        run: |
+          npx create-docusaurus@latest temp classic --javascript --skip-install
+          shopt -s dotglob
+          mv temp/* .
+          rmdir temp
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Initialize Docusaurus site" || echo "No changes to commit"
+          git push
