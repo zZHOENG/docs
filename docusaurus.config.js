@@ -94,7 +94,7 @@ const config = {
         alt: '文档 · 帮助',
         src: 'img/logo.svg',
       },
-      hideColorModeToggle: true,   // 禁用默认的自动切换按钮
+      // 注意：不要加 hideColorModeToggle: true
       items: [
         {
           type: 'docSidebar',
@@ -106,12 +106,6 @@ const config = {
           href: 'https://github.com/zZHOENG/docs',
           label: 'GitHub',
           position: 'right',
-        },
-        // 自定义颜色切换按钮（位于搜索框之前）
-        {
-          type: 'custom',
-          position: 'right',
-          component: require('./src/theme/ColorModeToggle').default,
         },
         // 搜索框
         {
