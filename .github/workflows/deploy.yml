@@ -5,12 +5,14 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# 全局权限（构建需要 read，部署需要 pages/id-token write）
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
+  # 1. 构建并上传成品
   build:
     runs-on: ubuntu-latest
     steps:
@@ -25,4 +27,15 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build
-      - uses: actions/deploy-pages@v4
+
+  # 2. 部署到 GitHub Pages（必须含 environment）
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
