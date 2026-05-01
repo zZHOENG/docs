@@ -1,25 +1,31 @@
 import React from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-import clsx from 'clsx';
 
-// 内置 SVG 图标，与 Docusaurus 默认图标视觉效果一致
+// 太阳图标 —— 与 Docusaurus 默认图标完全一致
 function SunIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-      <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.5 5.875l1.5-1.5 2.125 2.125-1.5 1.5L3.5 5.875zm13.75 0l2.125 2.125-1.5 1.5-2.125-2.125 1.5-1.5zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zm-1.875 6.875l1.5-1.5 2.125 2.125-1.5 1.5-2.125-2.125zM5.875 20.375l2.125-2.125 1.5 1.5-2.125 2.125-1.5-1.5z" />
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L7.4,4.58C7.01,4.19,6.38,4.19,5.99,4.58z M16.54,16.95 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41l-1.06-1.06 C17.56,16.56,16.93,16.56,16.54,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41c0.39,0.39,1.03,0.39,1.41,0L19.42,5.99z M7.05,16.54c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,16.54z"
+      />
     </svg>
   );
 }
 
+// 月亮图标 —— 与 Docusaurus 默认图标完全一致
 function MoonIcon() {
   return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-      <path d="M9.37 5.51c-.55.07-1.09.2-1.61.39a9 9 0 0010.35 10.35 7 7 0 01-8.74-10.74zM12 2a10 10 0 100 20 10 10 0 000-20z" />
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M9.37,5.51c-0.18,0.64-0.27,1.31-0.27,2c0,4.42,3.58,8,8,8c0.69,0,1.36-0.09,2-0.27C18.23,19.32,14.38,22,10,22 c-4.97,0-9-4.03-9-9C1,8.62,4.68,4.77,9.37,5.51z"
+      />
     </svg>
   );
 }
 
-export default function ColorModeToggle(props) {
+export default function ColorModeToggle() {
   const { colorMode, setColorMode } = useColorMode();
   const isDark = colorMode === 'dark';
 
@@ -29,12 +35,7 @@ export default function ColorModeToggle(props) {
 
   return (
     <button
-      className={clsx(
-        'clean-btn',
-        'navbar__item',
-        'colorModeToggle',       // 自定义类名，用于 CSS 调整顺序
-        props.className,
-      )}
+      className="clean-btn colorModeToggle"
       onClick={toggleColorMode}
       type="button"
       aria-label={
