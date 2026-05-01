@@ -1,0 +1,39 @@
+name: Initialize Docusaurus
+
+on: workflow_dispatch
+
+# 显式授予写入权限，避免 403 错误
+permissions:
+  contents: write
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ github.ref }}
+          # 确保使用有权限的 token（默认即可）
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Create Docusaurus project
+        run: |
+          npx create-docusaurus@latest temp classic --javascript --skip-install
+          shopt -s dotglob
+          mv temp/* .
+          rmdir temp
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Initialize Docusaurus site with lockfile" || echo "No changes to commit"
+          git push
