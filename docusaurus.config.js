@@ -68,6 +68,17 @@ const config = {
     ],
   ],
 
+  // 洛谷同款：只引入 KaTeX 的 CSS，不加任何脚本
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+',
+      crossorigin: 'anonymous',
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -77,17 +88,6 @@ const config = {
         defaultMode: 'light',
         respectPrefersColorScheme: false,
       },
-
-      // 只引入 KaTeX 默认样式，不加任何脚本或自定义样式
-      stylesheets: [
-        {
-          href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
-          type: 'text/css',
-          integrity:
-            'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+',
-          crossorigin: 'anonymous',
-        },
-      ],
 
       navbar: {
         title: '文档 · 帮助',
