@@ -25,8 +25,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* ======================== 搜索框基础样式 ======================== */
+/* ======================== 搜索框（桌面端） ======================== */
 .DocSearch-Button {
+  width: 220px;
   border-radius: 20px !important;
   background: rgba(0, 0, 0, 0.05) !important;
 }
@@ -48,7 +49,33 @@
   box-shadow: none;
 }
 
-/* ======================== 首页卡片容器 ======================== */
+/* ======================== 暗黑模式切换图标（对称 SVG 绘制） ======================== */
+/* 隐藏原有图标 */
+[class*="toggleButton"] svg {
+  display: none;
+}
+
+/* 绘制新图标（mask 方式，保持与原来相同的矢量行为） */
+[class*="toggleButton"]::after {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  /* 浅色模式：对称太阳 */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5'/%3E%3Cpath d='M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42' stroke='black' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* 暗黑模式：对称月牙 */
+[data-theme='dark'] [class*="toggleButton"]::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/%3E%3C/svg%3E");
+  transform: rotate(-20deg);  /* 轻微旋转让月亮更有动感，但依然对称 */
+}
+
+/* ======================== 首页卡片 ======================== */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -85,30 +112,40 @@
   opacity: 0.8;
 }
 
-/* ======================== 移动端适配 ======================== */
+/* ======================== 平板竖屏过渡 ======================== */
 @media screen and (max-width: 996px) {
-  /* 卡片在平板竖屏时仍可并排 */
   .card {
     flex: 1 1 45%;
   }
+}
 
-  /* 导航栏右侧：强制不换行，避免切换按钮被挤到下一行 */
+/* ======================== 手机端（≤768px）修复重叠 + 圆形搜索 ======================== */
+@media screen and (max-width: 768px) {
   .navbar__items--right {
     flex-wrap: nowrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 6px;
   }
 
-  /* 搜索框弹性宽度，留出空间给切换按钮 */
+  [class*="toggleButton"] {
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+
   .DocSearch-Button {
     width: auto !important;
-    max-width: 160px;
+    min-width: 38px;
+    height: 38px;
+    padding: 0 8px !important;
+    border-radius: 50% !important;
     flex-shrink: 1;
   }
-}
 
-@media screen and (max-width: 768px) {
-  /* 卡片垂直排列 */
+  .DocSearch-Button .DocSearch-Button-Placeholder,
+  .DocSearch-Button .DocSearch-Button-Key {
+    display: none;
+  }
+
   .cards {
     flex-direction: column;
     align-items: stretch;
@@ -116,11 +153,6 @@
 
   .card {
     flex: 1 1 auto;
-  }
-
-  /* 更小屏幕进一步压缩搜索框 */
-  .DocSearch-Button {
-    max-width: 130px;
   }
 }
 
@@ -130,7 +162,7 @@
   }
 }
 
-/* ======================== 页脚 ======================== */
+/* ======================== 页脚多行保留 ======================== */
 .footer__copyright {
   white-space: pre-wrap;
 }
