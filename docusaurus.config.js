@@ -81,12 +81,6 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
 
-      // ---------- 颜色模式 ----------
-      colorMode: {
-        defaultMode: 'light',               // 默认浅色模式
-        respectPrefersColorScheme: false,   // 不跟随系统颜色模式
-      },
-
       // ---------- 导航栏 ----------
       navbar: {
       title: '文档 · 帮助',
@@ -94,7 +88,6 @@ const config = {
         alt: '文档 · 帮助',
         src: 'img/logo.svg',
       },
-      // 注意：不要加 hideColorModeToggle: true
       items: [
         {
           type: 'docSidebar',
@@ -119,6 +112,12 @@ const config = {
         },
       ],
     },
+
+      // ---------- 颜色模式 ----------
+      colorMode: {
+        defaultMode: 'light',               // 默认浅色模式
+        respectPrefersColorScheme: false,   // 不跟随系统颜色模式
+      },
 
       // ---------- 页脚 ----------
       footer: {
@@ -146,7 +145,7 @@ const config = {
         appId: '02PW3ELEZ1',
         apiKey: 'c0b8800316a42fe632fc1de1f2ad97ef',
         indexName: 'zhoeng',
-        contextualSearch: false,
+        contextualSearch: true,
         placeholder: '搜索文档...',
       },
 
