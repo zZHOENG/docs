@@ -1,0 +1,23 @@
+name: Install LaTeX Dependencies
+
+on: workflow_dispatch
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Install remark-math and rehype-katex
+        run: |
+          npm install --save remark-math@6 rehype-katex@7
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "Install LaTeX dependencies (remark-math, rehype-katex)" || echo "No changes to commit"
+          git push
