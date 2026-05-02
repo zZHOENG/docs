@@ -5,13 +5,13 @@ title: 网站开发工作组
 
 # 网站开发工作组
 
-### [中政 ZHOENG · 河北正定中学办事处](https://zdzx.zhongzheng.tech/)网站开发工作组
+#### [中政 ZHOENG · 河北正定中学办事处](https://zdzx.zhongzheng.tech/)网站开发工作组
 
-### 中政集团 $\cdot$ 中政科技
+#### 中政集团 · 中政科技
 
 #### $\text{ZHONG ZHENG GROUP}\space\cdot\space\text{ZHOENG TECHNOLOGY}$
 
-### 网站开发组：
+## 网站开发组
 
 > 中政集团科技中心  
 > ZHONG ZHENG GROUP SCIENCE TECHNOLOGY CENTER
@@ -25,13 +25,13 @@ title: 网站开发工作组
 > 网站开发维护部门  
 > WEBSITE DEVELOPMENT MAINTENANCE DEPARTMENT
 
-### 开发组邮箱：
+## 开发组邮箱
 
-> ZHOENG_TECH@163.com （中政集团 $\cdot$ 中政科技）
+> ZHOENG_TECH@163.com （中政集团 · 中政科技）
 >
 > ZHENGZHONG_TECH@163.com （正中科技中心）
 
-### 开发组成员：
+## 开发组成员
 
 > $\text{ZZA000HAH}$
 >
@@ -39,7 +39,7 @@ title: 网站开发工作组
 >
 > $\text{DeepSeek R1}$
 
-### [ZZA000HAH](https://www.luogu.com.cn/user/1470004)：
+### [ZZA000HAH](https://www.luogu.com.cn/user/1470004)
 
 - 项目组首席执行官（CEO）
 - 项目组首席财务官（CFO）
@@ -73,9 +73,9 @@ title: 网站开发工作组
 
 ---
 
-![](https://api.xecades.xyz/api?img=3&date=2026-04-05&str=%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F&github=zZHOENG&luogu=ZZA000HAH&csdn=HAH_000000&juejin=ZZA000HAH&zhihu=ZZA000HAH)
+> ![](https://api.xecades.xyz/api?img=3&date=2026-04-05&str=%E7%BD%91%E7%AB%99%E8%AF%9E%E7%94%9F&github=zZHOENG&luogu=ZZA000HAH&csdn=HAH_000000&juejin=ZZA000HAH&zhihu=ZZA000HAH)
 
-### [LJH（liuhetao）](https://www.luogu.com.cn/user/1939114)：
+### [LJH（liuhetao）](https://www.luogu.com.cn/user/1939114)
 
 - 项目组副席执行官
 - 项目组副席财务官
@@ -111,7 +111,7 @@ title: 网站开发工作组
 
 > ![](https://cdn.luogu.com.cn/upload/image_hosting/5mani3b1.png)
 
-### [DeepSeek R1](https://www.deepseek.com/)：
+### [DeepSeek R1](https://www.deepseek.com/)
 
 - 项目组副席开发工程师
 - 项目组副席维护工程师
@@ -138,4 +138,4 @@ title: 网站开发工作组
 
 ---
 
-![](https://cdn.luogu.com.cn/upload/image_hosting/e0tk7t6i.png)
+> ![](https://cdn.luogu.com.cn/upload/image_hosting/e0tk7t6i.png)
