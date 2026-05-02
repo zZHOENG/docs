@@ -86,23 +86,25 @@
   opacity: 0.8;
 }
 
-/* ======================== 导航栏：浅暗切换排到搜索框前面 ======================== */
-/* 目标：切换按钮在搜索框左侧 */
+/* ======================== 导航栏：切换按钮放在搜索框前面 ======================== */
+/* 关键：Docusaurus 把搜索框包在 .navbar__search 里，所以要对这个容器排序 */
 .navbar__items--right {
-  /* 启用 flex 排序 */
+  display: flex;
+  flex-direction: row;
 }
 
 button.colorModeToggle {
-  order: 0;               /* 默认值，确保排在前 */
+  order: 0;
   margin-left: 0;
 }
 
-.DocSearch-Button {
-  order: 1;               /* 搜索框排到后面（右侧） */
+.navbar__search {
+  order: 1;
 }
 
-/* 也可将其他链接（如 GitHub）放在两者之间？保持默认 order: 0，它们会在按钮和搜索框中间 */
-/* 如果你希望顺序严格为：切换 → 搜索，可给其他链接也设 order: 1，但一般不需要 */
+/* 其他自定义链接（ZDZX、GitHub）默认 order: 0，会排在切换按钮前面，
+   如果你希望切换按钮紧贴搜索框，可以把这些链接的 order 也设成 2 或更高，
+   但一般保持默认就行，最终顺序为：链接们 → 切换按钮 → 搜索框 */
 
 /* ======================== 平板竖屏过渡 ======================== */
 @media screen and (max-width: 996px) {
@@ -111,34 +113,40 @@ button.colorModeToggle {
   }
 }
 
-/* ======================== 手机端（≤768px）修复重叠 + 圆形搜索 ======================== */
+/* ======================== 手机端（≤768px）彻底修复 ======================== */
 @media screen and (max-width: 768px) {
-  /* 禁止右侧容器换行，确保不溢出 */
+  /* 禁止右侧容器换行，固定单行 */
   .navbar__items--right {
     flex-wrap: nowrap !important;
     align-items: center;
     gap: 8px;
+    overflow: visible;
   }
 
-  /* 切换按钮固定不压缩 */
+  /* 切换按钮绝不压缩 */
   button.colorModeToggle {
     flex-shrink: 0 !important;
-    padding: 6px !important;
     min-width: 38px;
+    padding: 6px !important;
   }
 
-  /* 搜索框强制正圆，隐藏文字 */
+  /* 搜索框容器也不要压缩 */
+  .navbar__search {
+    flex-shrink: 0 !important;
+  }
+
+  /* 搜索框本身强制正圆 */
   .DocSearch-Button {
     width: 38px !important;
     height: 38px !important;
     min-width: 38px !important;
     padding: 0 !important;
     border-radius: 50% !important;
-    flex-shrink: 0 !important;
+    flex-shrink: 1 !important;       /* 如果空间极度不足，允许略微收缩 */
     justify-content: center !important;
-    order: 1;             /* 保持顺序 */
   }
 
+  /* 隐藏搜索框文字和快捷键提示 */
   .DocSearch-Button .DocSearch-Button-Placeholder,
   .DocSearch-Button .DocSearch-Button-Key {
     display: none !important;
