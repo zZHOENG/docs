@@ -52,6 +52,7 @@ const config = {
     ],
   ],
 
+  // 本地离线搜索插件
   themes: [
     [
       '@easyops-cn/docusaurus-search-local',
@@ -97,7 +98,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
-          // 搜索插件会自动在右侧添加搜索框，不需要手动添加 { type: 'search' }
+          // 不需要手动添加“搜索”项，本地搜索插件会自动注入
         ],
       },
 
