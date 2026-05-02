@@ -1,5 +1,7 @@
 // @ts-check
 import { themes as prismThemes } from 'prism-react-renderer';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -33,6 +35,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false,
         },
         blog: {
@@ -52,7 +56,6 @@ const config = {
     ],
   ],
 
-  // 本地离线搜索插件
   themes: [
     [
       '@easyops-cn/docusaurus-search-local',
@@ -74,6 +77,16 @@ const config = {
         defaultMode: 'light',
         respectPrefersColorScheme: false,
       },
+
+      stylesheets: [
+        {
+          href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+          type: 'text/css',
+          integrity:
+            'sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+',
+          crossorigin: 'anonymous',
+        },
+      ],
 
       navbar: {
         title: '文档 · 帮助',
@@ -98,7 +111,6 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
-          // 不需要手动添加“搜索”项，本地搜索插件会自动注入
         ],
       },
 
