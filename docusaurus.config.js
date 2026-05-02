@@ -108,13 +108,15 @@ const config = {
           {
             title: '文档',
             items: [
-              { label: '使用指南', to: '/docs/intro' },
-              { label: '常见问题', to: '/docs/faq' },
+              { label: '用户协议', to: '/docs/useragreement' },
+              { label: '隐私政策', to: '/docs/privacypolicy' },
+              { label: '免责声明', to: '/docs/disclaimer' },
             ],
           },
           {
             title: '关于',
             items: [
+              { label: 'ZDZX', href: 'https://zdzx.zhongzheng.tech/' },
               { label: 'GitHub', href: 'https://github.com/zZHOENG/docs' },
             ],
           },
