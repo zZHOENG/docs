@@ -35,6 +35,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          // 仅添加这两个插件，不添加任何其他数学相关配置
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false,
@@ -78,6 +79,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
 
+      // 只加载 KaTeX 样式，不加任何脚本
       stylesheets: [
         {
           href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
