@@ -118,3 +118,45 @@ button.colorModeToggle {
 .footer__copyright {
   white-space: pre-wrap;
 }
+
+/* ======================== LaTeX（KaTeX）适配样式 ======================== */
+
+/* 行内公式：适量内边距，背景与主色调呼应 */
+.katex {
+  font-size: 1.05em; /* 比正文字稍大，但保持和谐 */
+}
+
+:root .katex-display {
+  margin: 1.5rem 0;
+  padding: 0.75rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* 浅色模式下为块级公式加一个浅色背景和细边框 */
+:root .katex-display > .katex {
+  background-color: #f8fafc;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  padding: 0.5em 0.8em;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* 暗色模式下的块级公式样式 */
+[data-theme='dark'] .katex-display > .katex {
+  background-color: #1e293b;
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* 行内公式微调，避免与中文碰撞 */
+.katex-html {
+  /* 保持默认即可，必要时可调整 vertical-align */
+}
+
+/* 移动端块级公式可滚动 */
+@media (max-width: 768px) {
+  .katex-display {
+    font-size: 0.95em;
+  }
+}
