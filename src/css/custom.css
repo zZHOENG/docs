@@ -49,27 +49,34 @@
   box-shadow: none;
 }
 
-/* ======================== 暗黑模式切换图标（对称 SVG） ======================== */
-[class*="toggleButton"] svg {
-  display: none;                     /* 隐藏原始图标 */
+/* ======================== 暗黑模式切换图标（对称 SVG 重制） ======================== */
+/* 使用稳定的选择器：aria-label 包含 "Switch" */
+button[aria-label*="Switch"] svg {
+  display: none !important;             /* 隐藏原始线条图标 */
 }
 
-[class*="toggleButton"]::after {
+button[aria-label*="Switch"]::after {
   content: '';
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
-  background-color: currentColor;    /* 自动跟随文字颜色 */
+  background-color: currentColor;
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
-  /* 浅色模式：严格对称的太阳 */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' fill='none' stroke='currentColor' stroke-width='2'/%3E%3Cpath d='M12 7v-5M12 17v5M7 12h-5M17 12h5M15.5 8.5l3.6-3.6M8.5 8.5l-3.6-3.6M8.5 15.5l-3.6 3.6M15.5 15.5l3.6 3.6' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  /* 浅色：完全对称太阳 (8 条放射线 + 中心圆) */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='none'/%3E%3Cpath d='M12 7V4M12 17v3M7 12H4M17 12h3M8.46 8.46L6.34 6.34M15.54 15.54l2.12 2.12M8.46 15.54l-2.12 2.12M15.54 8.46l2.12-2.12' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='none'/%3E%3Cpath d='M12 7V4M12 17v3M7 12H4M17 12h3M8.46 8.46L6.34 6.34M15.54 15.54l2.12 2.12M8.46 15.54l-2.12 2.12M15.54 8.46l2.12-2.12' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* 暗黑模式：对称月牙 */
-[data-theme='dark'] [class*="toggleButton"]::after {
+[data-theme='dark'] button[aria-label*="Switch"]::after {
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' fill='currentColor'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' fill='currentColor'/%3E%3C/svg%3E");
   transform: rotate(-20deg);
 }
 
@@ -117,35 +124,38 @@
   }
 }
 
-/* ======================== 手机端（≤768px）修复所有问题 ======================== */
+/* ======================== 手机端（≤768px）彻底修复 ======================== */
 @media screen and (max-width: 768px) {
-  /* 右侧容器不换行 */
+  /* 禁止右侧容器换行，并确保容器不溢出 */
   .navbar__items--right {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
+    overflow: visible;
   }
 
-  /* 切换按钮固定大小，不压缩 */
-  [class*="toggleButton"] {
-    flex-shrink: 0;
-    margin-left: 0;
+  /* 切换按钮固定占用空间，绝不压缩 */
+  button[aria-label*="Switch"] {
+    flex-shrink: 0 !important;
+    margin-left: 0 !important;
+    padding: 6px !important;
+    min-width: 38px;
   }
 
-  /* 搜索框强制正圆，隐藏文字，只留放大镜 */
+  /* 搜索框强制正圆，隐藏文字 */
   .DocSearch-Button {
     width: 38px !important;
     height: 38px !important;
-    min-width: 0 !important;
+    min-width: 38px !important;
     padding: 0 !important;
     border-radius: 50% !important;
-    flex-shrink: 0;
-    justify-content: center;
+    flex-shrink: 0 !important;
+    justify-content: center !important;
   }
 
   .DocSearch-Button .DocSearch-Button-Placeholder,
   .DocSearch-Button .DocSearch-Button-Key {
-    display: none;
+    display: none !important;
   }
 
   /* 卡片垂直排列 */
@@ -159,6 +169,7 @@
   }
 }
 
+/* ======================== 极小屏优化 ======================== */
 @media screen and (max-width: 480px) {
   .card {
     padding: 1rem;
