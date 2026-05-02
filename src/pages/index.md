@@ -11,15 +11,15 @@ hide_table_of_contents: true
 ## 文档与帮助
 
 <div class="cards">
-  <a href="/docs/intro" class="card">
+  <a href="/docs/useragreement" class="card">
     <h3>📖 用户协议</h3>
     <p>zdzx 网站帮助 · 用户协议</p>
   </a>
-  <a href="/docs/faq" class="card">
+  <a href="/docs/privacypolicy" class="card">
     <h3>📖 隐私政策</h3>
     <p>zdzx 网站帮助 · 隐私政策</p>
   </a>
-  <a href="/docs/api" class="card">
+  <a href="/docs/disclaimer" class="card">
     <h3>📖 免责声明</h3>
     <p>zdzx 网站帮助 · 免责声明</p>
   </a>
