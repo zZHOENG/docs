@@ -25,30 +25,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* ======================== 搜索框（桌面端 220px） ======================== */
-.DocSearch-Button {
-  width: 220px;
-  border-radius: 20px !important;
-  background: rgba(0, 0, 0, 0.05) !important;
-}
-
-[data-theme='dark'] .DocSearch-Button {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-.DocSearch-Button .DocSearch-Button-Placeholder {
-  color: rgba(0, 0, 0, 0.6);
-}
-
-[data-theme='dark'] .DocSearch-Button .DocSearch-Button-Placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.DocSearch-Button:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-  box-shadow: none;
-}
-
 /* ======================== 首页卡片 ======================== */
 .cards {
   display: flex;
@@ -86,8 +62,7 @@
   opacity: 0.8;
 }
 
-/* ======================== 导航栏：切换按钮放在搜索框前面 ======================== */
-/* 关键：Docusaurus 把搜索框包在 .navbar__search 里，所以要对这个容器排序 */
+/* ======================== 导航栏：浅暗切换放在搜索框前面 ======================== */
 .navbar__items--right {
   display: flex;
   flex-direction: row;
@@ -102,10 +77,6 @@ button.colorModeToggle {
   order: 1;
 }
 
-/* 其他自定义链接（ZDZX、GitHub）默认 order: 0，会排在切换按钮前面，
-   如果你希望切换按钮紧贴搜索框，可以把这些链接的 order 也设成 2 或更高，
-   但一般保持默认就行，最终顺序为：链接们 → 切换按钮 → 搜索框 */
-
 /* ======================== 平板竖屏过渡 ======================== */
 @media screen and (max-width: 996px) {
   .card {
@@ -113,46 +84,20 @@ button.colorModeToggle {
   }
 }
 
-/* ======================== 手机端（≤768px）彻底修复 ======================== */
+/* ======================== 手机端适应 ======================== */
 @media screen and (max-width: 768px) {
-  /* 禁止右侧容器换行，固定单行 */
   .navbar__items--right {
     flex-wrap: nowrap !important;
     align-items: center;
     gap: 8px;
-    overflow: visible;
   }
 
-  /* 切换按钮绝不压缩 */
   button.colorModeToggle {
     flex-shrink: 0 !important;
     min-width: 38px;
     padding: 6px !important;
   }
 
-  /* 搜索框容器也不要压缩 */
-  .navbar__search {
-    flex-shrink: 0 !important;
-  }
-
-  /* 搜索框本身强制正圆 */
-  .DocSearch-Button {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    padding: 0 !important;
-    border-radius: 50% !important;
-    flex-shrink: 1 !important;       /* 如果空间极度不足，允许略微收缩 */
-    justify-content: center !important;
-  }
-
-  /* 隐藏搜索框文字和快捷键提示 */
-  .DocSearch-Button .DocSearch-Button-Placeholder,
-  .DocSearch-Button .DocSearch-Button-Key {
-    display: none !important;
-  }
-
-  /* 卡片垂直排列 */
   .cards {
     flex-direction: column;
     align-items: stretch;
@@ -163,7 +108,6 @@ button.colorModeToggle {
   }
 }
 
-/* ======================== 极小屏优化 ======================== */
 @media screen and (max-width: 480px) {
   .card {
     padding: 1rem;
