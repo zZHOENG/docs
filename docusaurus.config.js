@@ -1,63 +1,42 @@
 // @ts-check
-// 本文件为 Docusaurus 核心配置文件
-// 修改后提交 → Actions 自动部署 → 1-2 分钟生效
-// 文档：https://docusaurus.io/zh-CN/docs/configuration
-
 import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  // ======================== 站点基本信息 ========================
   title: '文档中心 · 帮助中心',
   tagline: '中政集团 · 河北正定中学办事处',
   favicon: 'img/favicon.ico',
 
-  // ======================== 未来兼容性标志 ========================
-  future: {
-    v4: true,
-  },
-
-  // ======================== 部署地址 ========================
   url: 'https://docs.zhongzheng.tech',
   baseUrl: '/',
 
-  // ======================== GitHub 信息 ========================
   organizationName: 'zZHOENG',
   projectName: 'docs',
 
-  // ======================== 链接检查策略 ========================
   onBrokenLinks: 'warn',
 
-  // ======================== Markdown 配置 ========================
   markdown: {
     hooks: {
-      onBrokenMarkdownLinks: 'warn',  // 从顶层移到这里
+      onBrokenMarkdownLinks: 'warn',
     },
   },
 
-  // ======================== 国际化（中文站点） ========================
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
 
-  // ======================== 预设 ========================
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        // ---------- 文档配置 ----------
         docs: {
           sidebarPath: './sidebars.js',
-          // 已删除 editUrl，移除“编辑此页”按钮
           showLastUpdateTime: false,
         },
-
-        // ---------- 博客配置 ----------
         blog: {
           showReadingTime: true,
-          // 已删除 editUrl，移除“编辑此页”按钮
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -66,8 +45,6 @@ const config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
-
-        // ---------- 主题配置 ----------
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -75,51 +52,55 @@ const config = {
     ],
   ],
 
-  // ======================== 主题配置 ========================
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        indexDocs: true,
+        indexBlog: true,
+        language: ['zh'],
+        hashed: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/docusaurus-social-card.jpg',
 
-      // ---------- 导航栏 ----------
-      navbar: {
-      title: '文档 · 帮助',
-      logo: {
-        alt: '文档 · 帮助',
-        src: 'img/logo.svg',
-      },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '文档与帮助',
-        },
-        {
-          href: 'https://zdzx.zhongzheng.tech/',
-          label: 'ZDZX',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/zZHOENG/docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-        // 搜索框
-        {
-          type: 'search',
-          position: 'right',
-        },
-      ],
-    },
-
-      // ---------- 颜色模式 ----------
       colorMode: {
-        defaultMode: 'light',               // 默认浅色模式
-        respectPrefersColorScheme: false,   // 不跟随系统颜色模式
+        defaultMode: 'light',
+        respectPrefersColorScheme: false,
       },
 
-      // ---------- 页脚 ----------
+      navbar: {
+        title: '文档 · 帮助',
+        logo: {
+          alt: '文档 · 帮助',
+          src: 'img/logo.svg',
+        },
+        items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: '文档与帮助',
+          },
+          {
+            href: 'https://zdzx.zhongzheng.tech/',
+            label: 'ZDZX',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/zZHOENG/docs',
+            label: 'GitHub',
+            position: 'right',
+          },
+          // 搜索插件会自动在右侧添加搜索框，不需要手动添加 { type: 'search' }
+        ],
+      },
+
       footer: {
         style: 'dark',
         links: [
@@ -140,16 +121,6 @@ const config = {
         copyright: `Copyright © 2025-${new Date().getFullYear()} 中政集团 · 中政科技 Copyright © 2026-${new Date().getFullYear()} 中政集团 · 河北正定中学办事处\nDevelop with DeepSeek R1. Built with Docusaurus.`,
       },
 
-      // ---------- Algolia 搜索 ----------
-      algolia: {
-        appId: '02PW3ELEZ1',
-        apiKey: 'c0b8800316a42fe632fc1de1f2ad97ef',
-        indexName: 'zhoeng',
-        contextualSearch: true,
-        placeholder: '搜索文档...',
-      },
-
-      // ---------- 代码块高亮 ----------
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
