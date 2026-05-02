@@ -49,37 +49,6 @@
   box-shadow: none;
 }
 
-/* ======================== 暗黑模式切换图标（对称 SVG 重制） ======================== */
-/* 使用稳定的选择器：aria-label 包含 "Switch" */
-button[aria-label*="Switch"] svg {
-  display: none !important;             /* 隐藏原始线条图标 */
-}
-
-button[aria-label*="Switch"]::after {
-  content: '';
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: currentColor;
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-
-  /* 浅色：完全对称太阳 (8 条放射线 + 中心圆) */
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='none'/%3E%3Cpath d='M12 7V4M12 17v3M7 12H4M17 12h3M8.46 8.46L6.34 6.34M15.54 15.54l2.12 2.12M8.46 15.54l-2.12 2.12M15.54 8.46l2.12-2.12' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='5' stroke='currentColor' stroke-width='2' fill='none'/%3E%3Cpath d='M12 7V4M12 17v3M7 12H4M17 12h3M8.46 8.46L6.34 6.34M15.54 15.54l2.12 2.12M8.46 15.54l-2.12 2.12M15.54 8.46l2.12-2.12' stroke='currentColor' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
-}
-
-/* 暗黑模式：对称月牙 */
-[data-theme='dark'] button[aria-label*="Switch"]::after {
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' fill='currentColor'/%3E%3C/svg%3E");
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' fill='currentColor'/%3E%3C/svg%3E");
-  transform: rotate(-20deg);
-}
-
 /* ======================== 首页卡片 ======================== */
 .cards {
   display: flex;
@@ -117,6 +86,24 @@ button[aria-label*="Switch"]::after {
   opacity: 0.8;
 }
 
+/* ======================== 导航栏：浅暗切换排到搜索框前面 ======================== */
+/* 目标：切换按钮在搜索框左侧 */
+.navbar__items--right {
+  /* 启用 flex 排序 */
+}
+
+button.colorModeToggle {
+  order: 0;               /* 默认值，确保排在前 */
+  margin-left: 0;
+}
+
+.DocSearch-Button {
+  order: 1;               /* 搜索框排到后面（右侧） */
+}
+
+/* 也可将其他链接（如 GitHub）放在两者之间？保持默认 order: 0，它们会在按钮和搜索框中间 */
+/* 如果你希望顺序严格为：切换 → 搜索，可给其他链接也设 order: 1，但一般不需要 */
+
 /* ======================== 平板竖屏过渡 ======================== */
 @media screen and (max-width: 996px) {
   .card {
@@ -124,20 +111,18 @@ button[aria-label*="Switch"]::after {
   }
 }
 
-/* ======================== 手机端（≤768px）彻底修复 ======================== */
+/* ======================== 手机端（≤768px）修复重叠 + 圆形搜索 ======================== */
 @media screen and (max-width: 768px) {
-  /* 禁止右侧容器换行，并确保容器不溢出 */
+  /* 禁止右侧容器换行，确保不溢出 */
   .navbar__items--right {
     flex-wrap: nowrap !important;
     align-items: center;
     gap: 8px;
-    overflow: visible;
   }
 
-  /* 切换按钮固定占用空间，绝不压缩 */
-  button[aria-label*="Switch"] {
+  /* 切换按钮固定不压缩 */
+  button.colorModeToggle {
     flex-shrink: 0 !important;
-    margin-left: 0 !important;
     padding: 6px !important;
     min-width: 38px;
   }
@@ -151,6 +136,7 @@ button[aria-label*="Switch"]::after {
     border-radius: 50% !important;
     flex-shrink: 0 !important;
     justify-content: center !important;
+    order: 1;             /* 保持顺序 */
   }
 
   .DocSearch-Button .DocSearch-Button-Placeholder,
