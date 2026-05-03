@@ -34,7 +34,7 @@
 }
 
 .card {
-  flex: 1 1 250px;
+  flex: 1 1 280px;
   display: block;
   padding: 1.5rem;
   border: 1px solid var(--ifm-color-emphasis-300);
