@@ -11,6 +11,18 @@ hide_table_of_contents: true
 ## 文档与帮助
 
 <div class="cards">
+  <a href="/docs/developer" class="card">
+    <h3>📖 开发工作</h3>
+    <p>zdzx 网站帮助 · 开发工作</p>
+  </a>
+  <a href="/docs/feedback" class="card">
+    <h3>📖 问题反馈</h3>
+    <p>zdzx 网站帮助 · 问题反馈</p>
+  </a>
+  <a href="/docs/publicize" class="card">
+    <h3>📖 投稿宣传</h3>
+    <p>zdzx 网站帮助 · 投稿宣传</p>
+  </a>
   <a href="/docs/useragreement" class="card">
     <h3>📖 用户协议</h3>
     <p>zdzx 网站帮助 · 用户协议</p>
