@@ -6,7 +6,7 @@ hide_table_of_contents: true
 
 # 文档中心 · 帮助中心
 
-[中政集团·河北正定中学办事处](https://zdzx.zhongzheng.tech/)文档与帮助中心
+[中政集团 · 河北正定中学办事处](https://zdzx.zhongzheng.tech/)文档与帮助中心
 
 ## 文档与帮助
 
