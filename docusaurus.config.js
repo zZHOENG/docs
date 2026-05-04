@@ -38,6 +38,7 @@ const config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false,
+          // 1. 暂时保留默认的 /docs 路由前缀，和你的 footer 链接保持一致
         },
         blog: {
           showReadingTime: true,
@@ -97,15 +98,17 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          // 2. 将 docId 修正为你实际存在的文档 ID
           {
             type: 'doc',
             docId: 'help/getting-started',
             position: 'left',
             label: '文档与帮助',
           },
+          // 3. 另一个 option: 如果暂时没有 'article' 相关的文档，可以先注释掉或删除
           {
             type: 'doc',
-            docId: 'article/getting-started',
+            docId: 'article/getting-started', // 确保这个文档确实存在
             position: 'left',
             label: '主站文章库',
           },
@@ -129,9 +132,10 @@ const config = {
           {
             title: '文档',
             items: [
-              { label: '用户协议', to: '/docs/useragreement' },
-              { label: '隐私政策', to: '/docs/privacypolicy' },
-              { label: '免责声明', to: '/docs/disclaimer' },
+              // 4. footer 里的链接可以保留，因为你没有使用根路由模式
+              { label: '用户协议', to: '/docs/help/useragreement' },
+              { label: '隐私政策', to: '/docs/help/privacypolicy' },
+              { label: '免责声明', to: '/docs/help/disclaimer' },
             ],
           },
           {
