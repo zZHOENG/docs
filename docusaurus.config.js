@@ -34,23 +34,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: './sidebars.js',   // 我们马上会重写这个文件
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false,
-          // 1. 暂时保留默认的 /docs 路由前缀，和你的 footer 链接保持一致
         },
-        blog: {
-          showReadingTime: true,
-          showLastUpdateTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        // 关闭博客
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -63,14 +53,14 @@ const config = {
       '@easyops-cn/docusaurus-search-local',
       {
         indexDocs: true,
-        indexBlog: true,
+        indexBlog: false,        // 因为已经关闭博客，所以设为 false
         language: ['zh'],
         hashed: true,
       },
     ],
   ],
 
-  // 洛谷同款：只引入 KaTeX 的 CSS，不加任何脚本
+  // KaTeX 样式表
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
@@ -98,21 +88,21 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          // 2. 将 docId 修正为你实际存在的文档 ID
+          // 第一个入口：帮助文档
           {
-            type: 'doc',
-            docId: 'help/getting-started',
+            type: 'docSidebar',
+            sidebarId: 'helpSidebar',
             position: 'left',
             label: '文档与帮助',
           },
-          // 3. 另一个 option: 如果暂时没有 'article' 相关的文档，可以先注释掉或删除
+          // 第二个入口：文章库
           {
-            type: 'doc',
-            docId: 'article/getting-started', // 确保这个文档确实存在
+            type: 'docSidebar',
+            sidebarId: 'articleSidebar',
             position: 'left',
             label: '主站文章库',
           },
-          //{to: '/blog', label: '文章镜像库', position: 'left'},
+          // 外链
           {
             href: 'https://zdzx.zhongzheng.tech/',
             label: 'ZDZX',
@@ -123,6 +113,7 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          // 搜索框（插件自动注入，无需写在这里）
         ],
       },
 
@@ -132,7 +123,7 @@ const config = {
           {
             title: '文档',
             items: [
-              // 4. footer 里的链接可以保留，因为你没有使用根路由模式
+              // ⚠️ 如果你的文档 id 为 help/useragreement 等，请修改为正确的路径
               { label: '用户协议', to: '/docs/help/useragreement' },
               { label: '隐私政策', to: '/docs/help/privacypolicy' },
               { label: '免责声明', to: '/docs/help/disclaimer' },
