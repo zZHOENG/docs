@@ -95,6 +95,6 @@ $Do\space Not\space Important$（无妨）
 
 ## UPDATE
 
-- 2026.04.05 第一版（$author:\text{ZZA000HAH}$，$‌version:1.0.0$）。
-- 2026.04.08 第一版第一次更新（$author:\text{ZZA000HAH}$，$‌version:1.0.1$），更新见 $[v,k],v=1,k=1$。
-- 2026.04.26 第一版第二次更新（$author:\text{ZZA000HAH}$，$‌version:1.0.2$），更新见 $[v,k],v=1,k=2$。
+- 2026.04.05 第一版（$author:\text Z\text Z\text A000\text H\text A\text H$，$‌version:1.0.0$）。
+- 2026.04.08 第一版第一次更新（$author:\text Z\text Z\text A000\text H\text A\text H$，$‌version:1.0.1$），更新见 $[v,k],v=1,k=1$。
+- 2026.04.26 第一版第二次更新（$author:\text Z\text Z\text A000\text H\text A\text H$，$‌version:1.0.2$），更新见 $[v,k],v=1,k=2$。
