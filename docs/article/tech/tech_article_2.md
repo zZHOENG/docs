@@ -1,9 +1,9 @@
 ---
 sidebar_position: 20
-title: 正中教室安装 Python 第三方库指南
+title: 正中教室安装Python第三方库指南
 ---
 
-# 正中教室计算机下载并安装 Python 第三方库指南
+# 正中教室计算机下载并安装Python第三方库指南
 
 #### Computer in the ZhengZhong Classroom: Guide to Downloading and Installing Python Third-Party Libraries
 
