@@ -1,5 +1,5 @@
 ---
-sidebar_position: 99
+sidebar_position: 1000000
 ---
 
 # 数学测试
