@@ -103,7 +103,7 @@ const config = {
             position: 'left',
             label: '文档与帮助',
           },
-          {to: '/blog', label: '文章镜像库', position: 'left'},
+          //{to: '/blog', label: '文章镜像库', position: 'left'},
           {
             href: 'https://zdzx.zhongzheng.tech/',
             label: 'ZDZX',
