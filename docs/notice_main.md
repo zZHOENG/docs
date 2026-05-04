@@ -3,7 +3,7 @@ sidebar_position: 10
 title: 网站全站主公告
 ---
 
-# 【公告】网站全站主公告
+# 网站全站主公告
 
 #### [中政 ZHOENG · 河北正定中学办事处](https://zdzx.zhongzheng.tech/)网站全站主公告
 
