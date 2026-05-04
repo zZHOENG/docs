@@ -1,13 +1,15 @@
 ---
 sidebar_position: 10
-title: 正中校园网获取【校园观察】视频指南
+title: 正中网获取【校园观察】视频指南
 ---
 
 # 正中校园网获取【校园观察】视频指南
 
-### Get the "Campus Observation" video guide from Zhongzheng Empire Network $ ^{[1,1]}$
+#### Get the "Campus Observation" video guide from Zhongzheng Empire Network $ ^{[1,1]}$
 
-## 序言 $ ^{[1,2]}$
+#### [原文链接：zdzx.zhongzheng.tech/tech/tech_article_1](https://zdzx.zhongzheng.tech/tech/tech_article_1/)
+
+## 序言
 
 【校园观察】已经出来两期了。（现在出来三期了）。$ ^{[1,2]}$
 
