@@ -1,6 +1,6 @@
 ---
 sidebar_position: 20
-title: 正中教室安装 Python 第三方库
+title: 正中教室安装 Python 第三方库指南
 ---
 
 # 正中教室计算机下载并安装 Python 第三方库指南
@@ -41,12 +41,12 @@ $Awak$，其希沃大屏中有希沃浏览器，希沃浏览器可以打开。
 
 $Awak$，在希沃浏览器中打开一个网址，通常只会无功而返。
 
-### 易知：
+### 易知
 
 - $Maybe\ Awak$，正中网络限制大部分域名的访问。
 - $Awak$，钉钉可以正常使用，也就是说没有限制钉钉相关域名的访问。
 
-### 探索：
+### 探索
 
 #### 山重水复疑无路
 
@@ -84,7 +84,7 @@ $It\ turned\ out:$
 
 $Now,I\ think\ you\ already\ have\ the\ answer\ in\ your\ heart.$（~~机翻~~）
 
-### 方法：
+### 方法
 
 $\text{As Python Developers Know,}$ 我们可以使用 Python 镜像源下载 Python 第三方库，使用内置 pip 包进行下载和安装操作。
 
@@ -130,7 +130,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ [库名]
 pip install -i https://mirrors.aliyun.com/pypi/simple/ pygame
 ```
 
-### 常见问题：$ ^{[1,2]}$
+### 常见问题
 
 - 你应确保所操作的计算机上已有 Python 环境且正常。$ ^{[1,2]}$
 - 你应确保所操作的计算机上已有 Python 的 pip 环境。$ ^{[1,2]}$
