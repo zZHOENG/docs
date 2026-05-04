@@ -98,10 +98,16 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'doc',
+            docId: 'help/getting-started',
             position: 'left',
             label: '文档与帮助',
+          },
+          {
+            type: 'doc',
+            docId: 'article/getting-started',
+            position: 'left',
+            label: '主站文章库',
           },
           //{to: '/blog', label: '文章镜像库', position: 'left'},
           {
