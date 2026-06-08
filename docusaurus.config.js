@@ -2,6 +2,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import remarkFold from './src/plugins/remark-fold.mjs';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -35,7 +36,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',   // 我们马上会重写这个文件
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [remarkMath, remarkFold],
           rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false,
         },
