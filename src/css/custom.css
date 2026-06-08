@@ -118,26 +118,26 @@ button.colorModeToggle {
   white-space: pre-wrap;
 }
 
-/* ======================== :::fold 折叠框 ======================== */
+/* ======================== :::fold 折叠框（主题色 #3498db） ======================== */
 details.fold-container {
-  border: 1px solid #b3d4fc;
+  border: 1px solid #aed6f1;          /* 浅蓝边框（主题色最浅） */
   border-radius: 6px;
   padding: 0.75em 1em;
   margin: 1em 0;
-  background-color: #f0f8ff;
-  transition: border-color 0.2s;
+  background-color: #ebf5fb;          /* 极浅蓝背景（主题色对比背景） */
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 details.fold-container[open] {
-  border-color: #4a90d9;
-  background-color: #ffffff;
+  border-color: #3498db;              /* 展开时边框变为主色 */
+  background-color: #ffffff;          /* 展开时背景变白 */
 }
 
 details.fold-container summary {
   font-weight: 600;
-  color: #1e6bb8;
+  color: #2e86c1;                     /* 标题文字：主色的深色变体 */
   cursor: pointer;
-  list-style: none;          /* 隐藏默认三角形 */
+  list-style: none;                   /* 隐藏默认三角 */
   user-select: none;
   position: relative;
   padding-left: 1.2em;
@@ -150,7 +150,7 @@ details.fold-container summary::before {
   left: 0;
   top: 0;
   transition: transform 0.2s;
-  color: #1e6bb8;
+  color: #2e86c1;                     /* 箭头颜色与标题一致 */
   font-size: 0.9em;
 }
 
@@ -158,8 +158,8 @@ details.fold-container[open] summary::before {
   transform: rotate(90deg);
 }
 
-/* 折叠内容区域略增内边距 */
+/* 折叠内容区域 */
 details.fold-container .fold-content {
   margin-top: 0.5em;
-  padding-left: 1.2em;
+  padding-left: 1.2em;                /* 与标题箭头对齐 */
 }
