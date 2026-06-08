@@ -45,7 +45,8 @@ title: 网站开发工作组
 - 项目组首席财务官（CFO）
 - 项目组首席运营官（COO）
 
-:::fold ZZA000HAH 项目组首席官
+<details>
+  <summary>ZZA000HAH 项目组首席官</summary>
 
 - 项目组首席执行官（$CEO$）
 - 项目组首席运营官（$COO$）
@@ -78,7 +79,7 @@ title: 网站开发工作组
 - 项目组首席人力资源官（$CHRO$）
 - 项目组首席信息安全官（$CISO$）
 
-:::
+</details>
 
 ---
 
@@ -116,14 +117,15 @@ title: 网站开发工作组
 - 项目组副席财务官
 - 项目组副席运营官
 
-:::fold LJH（liuhetao）项目组副席官
+<details>
+  <summary>LJH（liuhetao）项目组副席官</summary>
 
 - 项目组副席执行官
 - 项目组副席财务官
 - 项目组副席运营官
 - $etc.$
 
-:::
+</details>
 
 ---
 
