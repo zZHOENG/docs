@@ -119,72 +119,73 @@ button.colorModeToggle {
 }
 
 /* ======================== Luogu Style ======================== */
-/* 重置并设置整个折叠框的默认样式 */
+/* 洛谷风格折叠框 - 作用于所有 <details> */
 details {
-  /* 重置边框和内边距，设置背景色和边距 */
-  border: none;
-  background-color: var(--ifm-color-emphasis-100);
-  border-radius: var(--ifm-global-radius);
   margin-bottom: 1rem;
-  /* 添加平滑的过渡效果 */
-  transition: background-color 0.2s ease;
-}
-
-/* 重置并设置摘要（标题栏）的样式 */
-details > summary {
-  /* 重置默认样式，使其变为一个块级元素，并设置鼠标样式 */
-  display: block;
-  cursor: pointer;
-  list-style: none; /* 移除默认小三角 */
-  padding: 0.8rem 1rem;
-  font-weight: 500;
-  border-bottom: none;
-  /* 设置文本颜色，跟随主题变量 */
-  color: var(--ifm-color-emphasis-900);
-  background-color: var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-global-radius);
+  border-radius: 0.25rem;
+  overflow: hidden; /* 让圆角边框生效 */
+  /* 洛谷风格的边框和背景 */
+  border: 1px solid #e9ecef;
+  background-color: #fff;
   transition: all 0.2s ease;
 }
 
-/* 自定义摘要前的指示符（比如洛谷用的小箭头/加号） */
+/* 洛谷风格折叠框的头部 */
+details > summary {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  list-style: none; /* 移除默认三角 */
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+/* 洛谷风格的图标 */
 details > summary::before {
   content: '▶';
   display: inline-block;
+  margin-right: 0.5rem;
   font-size: 0.8em;
-  margin-right: 0.8rem;
   transition: transform 0.2s ease;
-  color: var(--ifm-color-primary);
+  /* 可选：给图标加主题色 */
+  color: #2c7da0;
 }
 
-/* 当折叠框展开时，旋转指示符 */
+/* 展开时的图标效果 */
 details[open] > summary::before {
   transform: rotate(90deg);
 }
 
-/* 隐藏 WebKit 内核浏览器自带的默认小三角 */
+/* 隐藏浏览器默认图标 */
 details > summary::-webkit-details-marker {
   display: none;
 }
 
-/* 设置折叠框内部内容的样式 */
+/* 洛谷风格的内容区域 */
 details > :not(summary) {
-  margin: 1rem;
-  padding: 0;
+  padding: 1rem;
+  margin: 0;
+  background-color: #fff;
 }
 
-/* 可选：为内部的段落添加上下边距，提升阅读体验 */
-details > :not(summary) > p:first-child {
-  margin-top: 0;
+/* 你还可以为不同类型添加上边框主题色，模拟洛谷的 `success`, `warning` 等 */
+/* 这需要你在 <details> 标签上添加自定义类名，如 <details class="success"> */
+details.success {
+  border-top: 3px solid #28a745;
 }
-details > :not(summary) > p:last-child {
-  margin-bottom: 0;
+details.success > summary::before {
+  color: #28a745;
 }
-
-/* 暗色模式下的背景色调微调，以保证文字的可读性 */
-[data-theme='dark'] details {
-  background-color: var(--ifm-color-emphasis-100);
+details.warning {
+  border-top: 3px solid #ffc107;
 }
-[data-theme='dark'] details > summary {
-  background-color: var(--ifm-color-emphasis-200);
-  color: var(--ifm-color-emphasis-900);
+details.warning > summary::before {
+  color: #ffc107;
+}
+details.error {
+  border-top: 3px solid #dc3545;
+}
+details.error > summary::before {
+  color: #dc3545;
 }
