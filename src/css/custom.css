@@ -118,48 +118,73 @@ button.colorModeToggle {
   white-space: pre-wrap;
 }
 
-/* ======================== :::fold 折叠框（主题色 #3498db） ======================== */
-details.fold-container {
-  border: 1px solid #aed6f1;          /* 浅蓝边框（主题色最浅） */
-  border-radius: 6px;
-  padding: 0.75em 1em;
-  margin: 1em 0;
-  background-color: #ebf5fb;          /* 极浅蓝背景（主题色对比背景） */
-  transition: border-color 0.2s, background-color 0.2s;
+/* ======================== Luogu Style ======================== */
+/* 重置并设置整个折叠框的默认样式 */
+details {
+  /* 重置边框和内边距，设置背景色和边距 */
+  border: none;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: var(--ifm-global-radius);
+  margin-bottom: 1rem;
+  /* 添加平滑的过渡效果 */
+  transition: background-color 0.2s ease;
 }
 
-details.fold-container[open] {
-  border-color: #3498db;              /* 展开时边框变为主色 */
-  background-color: #ffffff;          /* 展开时背景变白 */
-}
-
-details.fold-container summary {
-  font-weight: 600;
-  color: #2e86c1;                     /* 标题文字：主色的深色变体 */
+/* 重置并设置摘要（标题栏）的样式 */
+details > summary {
+  /* 重置默认样式，使其变为一个块级元素，并设置鼠标样式 */
+  display: block;
   cursor: pointer;
-  list-style: none;                   /* 隐藏默认三角 */
-  user-select: none;
-  position: relative;
-  padding-left: 1.2em;
+  list-style: none; /* 移除默认小三角 */
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  border-bottom: none;
+  /* 设置文本颜色，跟随主题变量 */
+  color: var(--ifm-color-emphasis-900);
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  transition: all 0.2s ease;
 }
 
-/* 自定义三角箭头 */
-details.fold-container summary::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  top: 0;
-  transition: transform 0.2s;
-  color: #2e86c1;                     /* 箭头颜色与标题一致 */
-  font-size: 0.9em;
+/* 自定义摘要前的指示符（比如洛谷用的小箭头/加号） */
+details > summary::before {
+  content: '▶';
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 0.8rem;
+  transition: transform 0.2s ease;
+  color: var(--ifm-color-primary);
 }
 
-details.fold-container[open] summary::before {
+/* 当折叠框展开时，旋转指示符 */
+details[open] > summary::before {
   transform: rotate(90deg);
 }
 
-/* 折叠内容区域 */
-details.fold-container .fold-content {
-  margin-top: 0.5em;
-  padding-left: 1.2em;                /* 与标题箭头对齐 */
+/* 隐藏 WebKit 内核浏览器自带的默认小三角 */
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 设置折叠框内部内容的样式 */
+details > :not(summary) {
+  margin: 1rem;
+  padding: 0;
+}
+
+/* 可选：为内部的段落添加上下边距，提升阅读体验 */
+details > :not(summary) > p:first-child {
+  margin-top: 0;
+}
+details > :not(summary) > p:last-child {
+  margin-bottom: 0;
+}
+
+/* 暗色模式下的背景色调微调，以保证文字的可读性 */
+[data-theme='dark'] details {
+  background-color: var(--ifm-color-emphasis-100);
+}
+[data-theme='dark'] details > summary {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
 }
