@@ -42,8 +42,8 @@ title: 网站开发工作组
 ### [ZZA000HAH](https://www.luogu.com.cn/user/1470004)
 
 - 项目组首席执行官（CEO）
-- 项目组首席财务官（CFO）
 - 项目组首席运营官（COO）
+- 项目组首席财务官（CFO）
 
 <details>
   <summary>ZZA000HAH 项目组首席官</summary>
@@ -114,8 +114,8 @@ title: 网站开发工作组
 ### [LJH（liuhetao）](https://www.luogu.com.cn/user/1939114)
 
 - 项目组副席执行官
-- 项目组副席财务官
 - 项目组副席运营官
+- 项目组副席财务官
 
 <details>
   <summary>LJH（liuhetao）项目组副席官</summary>
