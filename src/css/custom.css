@@ -120,11 +120,11 @@ button.colorModeToggle {
 
 /* ======================== :::fold 折叠框（主题色 #3498db） ======================== */
 details.fold-container {
-  border: 1px solid #aed6f1;          /* 浅蓝边框 */
+  border: 1px solid #3498db;          /* 浅蓝边框 */
   border-radius: 6px;
   padding: 0.75em 1em;
   margin: 1em 0;
-  background-color: #ebf5fb;          /* 极浅蓝背景 */
+  background-color: #3498db;          /* 极浅蓝背景 */
   transition: border-color 0.2s;
 }
 
