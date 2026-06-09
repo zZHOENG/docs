@@ -156,3 +156,30 @@ details summary::before {
 details[open] summary::before {
   transform: rotate(90deg);
 }
+
+/* ======================== 折叠框：暗色模式 ======================== */
+[data-theme='dark'] details {
+  border-color: #5dade2;            /* 较亮的蓝色边框，在暗色背景下可见 */
+  background-color: #1a2a3a;        /* 深蓝黑背景，不是纯黑，保持层次 */
+}
+
+[data-theme='dark'] details[open] {
+  border-color: #3498db;            /* 展开时边框回归主色，更突出 */
+  background-color: #1e2e3f;        /* 展开后背景稍亮，便于阅读内容 */
+}
+
+[data-theme='dark'] details summary {
+  color: #aed6f1;                   /* 浅蓝文字，保证在深色背景上清晰 */
+}
+
+[data-theme='dark'] details summary::before {
+  color: #aed6f1;                   /* 箭头与标题同色 */
+}
+
+[data-theme='dark'] details[open] summary {
+  color: #85c1e9;                   /* 展开后标题稍亮，表示激活状态 */
+}
+
+[data-theme='dark'] details[open] summary::before {
+  color: #85c1e9;
+}
