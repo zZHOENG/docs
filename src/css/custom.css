@@ -118,74 +118,48 @@ button.colorModeToggle {
   white-space: pre-wrap;
 }
 
-/* ======================== Luogu Style ======================== */
-/* 洛谷风格折叠框 - 作用于所有 <details> */
-details {
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
-  overflow: hidden; /* 让圆角边框生效 */
-  /* 洛谷风格的边框和背景 */
-  border: 1px solid #e9ecef;
-  background-color: #fff;
-  transition: all 0.2s ease;
+/* ======================== :::fold 折叠框（主题色 #3498db） ======================== */
+details.fold-container {
+  border: 1px solid #aed6f1;          /* 浅蓝边框 */
+  border-radius: 6px;
+  padding: 0.75em 1em;
+  margin: 1em 0;
+  background-color: #ebf5fb;          /* 极浅蓝背景 */
+  transition: border-color 0.2s;
 }
 
-/* 洛谷风格折叠框的头部 */
-details > summary {
-  padding: 0.75rem 1rem;
-  font-weight: 500;
+details.fold-container[open] {
+  border-color: #3498db;              /* 展开时边框变为主色 */
+  background-color: #ffffff;
+}
+
+details.fold-container summary {
+  font-weight: 600;
+  color: #2e86c1;                     /* 深蓝文字 */
   cursor: pointer;
-  list-style: none; /* 移除默认三角 */
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-  transition: background-color 0.2s ease;
+  list-style: none;                   /* 隐藏默认三角 */
+  user-select: none;
+  position: relative;
+  padding-left: 1.2em;
 }
 
-/* 洛谷风格的图标 */
-details > summary::before {
-  content: '▶';
-  display: inline-block;
-  margin-right: 0.5rem;
-  font-size: 0.8em;
-  transition: transform 0.2s ease;
-  /* 可选：给图标加主题色 */
-  color: #2c7da0;
+/* 自定义三角箭头 */
+details.fold-container summary::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.2s;
+  color: #2e86c1;                     /* 箭头颜色与标题一致 */
+  font-size: 0.9em;
 }
 
-/* 展开时的图标效果 */
-details[open] > summary::before {
+details.fold-container[open] summary::before {
   transform: rotate(90deg);
 }
 
-/* 隐藏浏览器默认图标 */
-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-/* 洛谷风格的内容区域 */
-details > :not(summary) {
-  padding: 1rem;
-  margin: 0;
-  background-color: #fff;
-}
-
-/* 你还可以为不同类型添加上边框主题色，模拟洛谷的 `success`, `warning` 等 */
-/* 这需要你在 <details> 标签上添加自定义类名，如 <details class="success"> */
-details.success {
-  border-top: 3px solid #28a745;
-}
-details.success > summary::before {
-  color: #28a745;
-}
-details.warning {
-  border-top: 3px solid #ffc107;
-}
-details.warning > summary::before {
-  color: #ffc107;
-}
-details.error {
-  border-top: 3px solid #dc3545;
-}
-details.error > summary::before {
-  color: #dc3545;
+/* 折叠内容区域略增内边距 */
+details.fold-container .fold-content {
+  margin-top: 0.5em;
+  padding-left: 1.2em;
 }
