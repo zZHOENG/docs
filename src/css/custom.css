@@ -119,47 +119,40 @@ button.colorModeToggle {
 }
 
 /* ======================== :::fold 折叠框（主题色 #3498db） ======================== */
-details.fold-container {
-  border: 1px solid #3498db;          /* 浅蓝边框 */
+details {
+  border: 1px solid #3498db;
   border-radius: 6px;
   padding: 0.75em 1em;
   margin: 1em 0;
-  background-color: #3498db;          /* 极浅蓝背景 */
+  background-color: #ebf5fb;          /* 极浅蓝背景（不要直接用主题色，会看不清文字） */
   transition: border-color 0.2s;
 }
 
-details.fold-container[open] {
-  border-color: #3498db;              /* 展开时边框变为主色 */
-  background-color: #3498db;
+details[open] {
+  border-color: #3498db;
+  background-color: #ffffff;          /* 展开后恢复白色背景 */
 }
 
-details.fold-container summary {
+details summary {
   font-weight: 600;
-  color: #2e86c1;                     /* 深蓝文字 */
+  color: #2e86c1;
   cursor: pointer;
-  list-style: none;                   /* 隐藏默认三角 */
+  list-style: none;
   user-select: none;
   position: relative;
   padding-left: 1.2em;
 }
 
-/* 自定义三角箭头 */
-details.fold-container summary::before {
+details summary::before {
   content: '▸';
   position: absolute;
   left: 0;
   top: 0;
   transition: transform 0.2s;
-  color: #2e86c1;                     /* 箭头颜色与标题一致 */
+  color: #2e86c1;
   font-size: 0.9em;
 }
 
-details.fold-container[open] summary::before {
+details[open] summary::before {
   transform: rotate(90deg);
-}
-
-/* 折叠内容区域略增内边距 */
-details.fold-container .fold-content {
-  margin-top: 0.5em;
-  padding-left: 1.2em;
 }
