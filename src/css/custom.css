@@ -130,7 +130,7 @@ details.fold-container {
 
 details.fold-container[open] {
   border-color: #3498db;              /* 展开时边框变为主色 */
-  background-color: #ffffff;
+  background-color: #3498db;
 }
 
 details.fold-container summary {
