@@ -192,7 +192,7 @@ title: 网站开发工作组
 
 > $Physics:\text{HTY(GSO)(yingyingying125)}$
 
-### [GSO（yingyingying125）](https://www.luogu.com.cn/user/2188569)：
+### [GSO（yingyingying125）](https://www.luogu.com.cn/user/2188569)
 
 - 项目组首席物理顾问
 - 项目组首席电子科技高级工程师
