@@ -11,7 +11,7 @@ title: 网站开发工作组
 
 #### $\text{ZHONG ZHENG GROUP}\space\cdot\space\text{ZHOENG TECHNOLOGY}$
 
-## 网站开发组：
+## 网站开发组
 
 > 中政集团科技中心  
 > ZHONG ZHENG GROUP SCIENCE TECHNOLOGY CENTER
@@ -25,7 +25,7 @@ title: 网站开发工作组
 > 网站开发运维部门  
 > WEBSITE DEVELOPMENT ‌OPERATION AND MAINTENANCE DEPARTMENT
 
-## 开发组邮箱：
+## 开发组邮箱
 
 > ZHOENG_TECH@163.com（`zhoeng_tech@163.com` 中政集团 $\cdot$ 科技中心 $\times$ 中政科技）
 >
@@ -33,7 +33,7 @@ title: 网站开发工作组
 > 
 > ZHENGZHONG_TECH@163.com（`zhengzhong_tech@163.com` 中政集团 $\cdot$ 正中科技中心）
 
-## 开发组成员：
+## 开发组成员
 
 > $\text{ZZA000HAH}$
 >
@@ -188,11 +188,11 @@ title: 网站开发工作组
 
 > ![](https://cdn.luogu.com.cn/upload/image_hosting/e0tk7t6i.png)
 
-## 开发组顾问：
+## 开发组顾问
 
 > $Physics:\text{HTY(GSO)(yingyingying125)}$
 
-### [GSO（yingyingying125）](https://www.luogu.com.cn/user/2188569)
+### [HTY（GSO）](https://www.luogu.com.cn/user/2188569)
 
 - 项目组首席物理顾问
 - 项目组首席电子科技高级工程师
