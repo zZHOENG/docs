@@ -7,11 +7,11 @@ title: 网站开发工作组
 
 #### [中政 ZHOENG · 河北正定中学办事处](https://zdzx.zhongzheng.tech/)网站开发工作组
 
-#### 中政集团 · 中政科技
+#### 中政集团 $\cdot$ 中政科技
 
 #### $\text{ZHONG ZHENG GROUP}\space\cdot\space\text{ZHOENG TECHNOLOGY}$
 
-## 网站开发组
+## 网站开发组：
 
 > 中政集团科技中心  
 > ZHONG ZHENG GROUP SCIENCE TECHNOLOGY CENTER
@@ -22,16 +22,18 @@ title: 网站开发工作组
 > 信息技术发展中心  
 > INFORMATION TECHNOLOGY DEVELOPING CENTER
 >
-> 网站开发维护部门  
-> WEBSITE DEVELOPMENT MAINTENANCE DEPARTMENT
+> 网站开发运维部门  
+> WEBSITE DEVELOPMENT ‌OPERATION AND MAINTENANCE DEPARTMENT
 
-## 开发组邮箱
+## 开发组邮箱：
 
-> ZHOENG_TECH@163.com （中政集团 · 中政科技）
+> ZHOENG_TECH@163.com（`zhoeng_tech@163.com` 中政集团 $\cdot$ 科技中心 $\times$ 中政科技）
 >
-> ZHENGZHONG_TECH@163.com （正中科技中心）
+> ZHOENG_LEGAL@163.com（`zhoeng_legal@163.com` 中政集团 $\cdot$ 法务中心 $\times$ 中政法务）
+> 
+> ZHENGZHONG_TECH@163.com（`zhengzhong_tech@163.com` 中政集团 $\cdot$ 正中科技中心）
 
-## 开发组成员
+## 开发组成员：
 
 > $\text{ZZA000HAH}$
 >
@@ -185,3 +187,57 @@ title: 网站开发工作组
 ---
 
 > ![](https://cdn.luogu.com.cn/upload/image_hosting/e0tk7t6i.png)
+
+## 开发组顾问：
+
+> $Physics:\text{HTY(GSO)(yingyingying125)}$
+
+### [GSO（yingyingying125）](https://www.luogu.com.cn/user/2188569)：
+
+- 项目组首席物理顾问
+- 项目组首席电子科技高级工程师
+- 项目组首席电气工程高级工程师
+- 项目组首席机器机械高级工程师
+- 项目组首席自动化正高级工程师
+
+> ![](https://api.xecades.xyz/api?quote=%E5%98%A4%E5%98%A4%E5%98%A4&github=yingyingying125&luogu=yingyingying125&qq=390788580)
+
+## 加入我们
+
+### 介绍
+
+$\text{Welcome}$ 欢迎加入我们 **中政集团 $\cdot$ 河北正定中学办事处**
+
+联系邮箱 `mail` : `zhoeng_tech@163.com`
+
+$QQ$ 交流群：`978843581`（$中政 \cdot 河北正中办事处(\text A 群)$）
+
+> **身正心定，闳中博学**
+
+---
+
+### 题组
+
+$\text{题目一 Problem A}$：
+
+> #### 问 $\text{CCF}$ 的全称是什么：
+>
+> $\text{A.China Computer Federation 中国计算机联邦}$
+>
+> $\text{B.China Computer Foundation 中国计算机基金会}$
+>
+> $\text{C.China Collection(funds) Foundation 中国收钱基金会}$
+>
+> $\text{D.China Coin(collection) Foundation 中国收硬币基金会}$
+
+$\text{题目二 Problem B}$：
+
+> #### 问 $\text{正中}$ 的全称是什么：
+>
+> $\text{A.Hebei Zhengding Zhong Xue 河北正定中学}$
+>
+> $\text{B.Hebei Zhengding High School 河北正定中学}$
+>
+> $\text{C.Hebei Zhengding Middle School 河北正定初中}$
+>
+> $\text{D.Hebei Zhengding High Middle School 河北正定高中}$
